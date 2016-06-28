@@ -1,3 +1,7 @@
+Sys.setenv(TZ="PST8PDT")
+Sys.setenv(ORA_SDTZ="PST8PDT")
+load("saas data.RData")
+
 shinyUI(
   pageWithSidebar(
   # Applicataion title
@@ -17,7 +21,7 @@ shinyUI(
                 c('PRODUCT1'='GTM',
                   'PRODUCT2'='GTW',
                   'PRODUCT3'='GTT')),
-    selectizeInput('startmonth','Select the Starting Month of the Customers:',selected="2015-01-01", 
+    selectizeInput('startmonth','Select the Starting Month of the Customers:',selected="2016-01-01", 
                    choices=as.character(unique(all.rr.final$START_MONTH)), 
                    multiple=TRUE)
   ),
